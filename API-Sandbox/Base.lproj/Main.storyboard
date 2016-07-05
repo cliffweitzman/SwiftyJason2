@@ -23,17 +23,19 @@
                                 <rect key="frame" x="40" y="60" width="520" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-Ux-HI7">
-                                        <rect key="frame" x="218" y="0.0" width="84" height="20"/>
+                                        <rect key="frame" x="60" y="0.0" width="400" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="YnN-bf-hOJ"/>
+                                            <constraint firstAttribute="width" constant="400" id="q6n-2b-Bya"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rights Owner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmT-q5-Xb5">
-                                        <rect key="frame" x="208" y="30" width="104" height="20"/>
+                                        <rect key="frame" x="60" y="30" width="400" height="20"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="Yvy-DW-nDC"/>
                                             <constraint firstAttribute="height" constant="20" id="n6b-2w-raZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -41,8 +43,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-qC-hJx">
-                                        <rect key="frame" x="210" y="60" width="101" height="20"/>
+                                        <rect key="frame" x="60" y="60" width="400" height="20"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="3Cf-bd-MCt"/>
                                             <constraint firstAttribute="height" constant="20" id="zUq-Wa-IOJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,8 +53,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-j6-gmu">
-                                        <rect key="frame" x="241" y="90" width="39" height="20"/>
+                                        <rect key="frame" x="60" y="90" width="400" height="20"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="Dv4-Ev-E4P"/>
                                             <constraint firstAttribute="height" constant="20" id="udQ-K5-Zge"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -75,6 +79,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-gz-1il">
+                                <rect key="frame" x="232" y="458" width="137" height="30"/>
+                                <state key="normal" title="New Random Movie"/>
+                                <connections>
+                                    <action selector="newMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kaJ-o8-Pkh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
