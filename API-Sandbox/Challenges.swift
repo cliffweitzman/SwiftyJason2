@@ -32,17 +32,25 @@ internal func exerciseOne() {
     // then the value stored in "first". We  then told it that we wanted the value as a string.
     
     /*
-     
      Now it's your turn to get the rest of the values needed to print the following:
      
      "<first name> <last name> lives at <street name> in <city>, <state>, <post code>.
      If you want to contact <title>. <last name>, you can email <email address> or
      call at <cell phone number>."
-     
      */
     
+    let lastName = userData["results"][0]["name"]["last"].stringValue
+    let streetName = userData["results"][0]["location"]["street"].stringValue
+    let city = userData["results"][0]["location"]["city"].stringValue
+    let state = userData["results"][0]["location"]["state"].stringValue
+    let postalCode = userData["results"][0]["location"]["postcode"].stringValue
+    let title = userData["results"][0]["name"]["title"].stringValue
+    let emailAddress = userData["results"][0]["email"].stringValue
+    let phoneNumber = userData["results"][0]["cell"].stringValue
+
     
-    
+    let toPrint =  "\(firstName) \(lastName) lives at \(streetName) in \(city), \(state), \(postalCode). If you want to contact \(title). \(lastName), you can email \(emailAddress) or call at \(phoneNumber)."
+    print(toPrint)
     
     
 }
@@ -68,7 +76,7 @@ internal func exerciseTwo() {
     
     // Uncomment this print statement when you are ready to check your code!
     
-//    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
+    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
 }
 
 internal func exerciseThree() {
@@ -87,27 +95,30 @@ internal func exerciseThree() {
     
     // We've done you the favor of grabbing an array of JSON objects representing each movie
     let allMoviesData = moviesData["feed"]["entry"].arrayValue
-    
     /*
-     
      Figure out a way to turn the allMoviesData array into Movie structs!
-     
      */
     var allMovies: [Movie] = []
     
-    
-    
+    for movieJSON in allMoviesData {
+        allMovies.append(Movie(json: movieJSON))
+    }
     
     /*
-     
      Uncomment the below print statement and then print out the names of the two Disney
+     /
      movies in allMovies. A movie is considered to be a "Disney movie" if `rightsOwner`
      contains the `String` "Disney". Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are Disney movies:")
-    
-    
+    var toPrint2 = " "
+    for movie in allMovies {
+        if movie.rightsOwner.containsString("Disney") {
+            toPrint2 += (movie.name + ", ")
+        }
+    }
+    toPrint2 = String(toPrint2.characters.dropLast(3))
+    print("The following movies are Disney movies:" + toPrint2)
     
     
     /*
@@ -116,9 +127,14 @@ internal func exerciseThree() {
      movie that costs less than $15. Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are cost less than $15:")
-    
-    
+    var toPrint3 = " "
+    for movie in allMovies {
+        if movie.price < 15.00 {
+            toPrint3 += (movie.name + ", ")
+        }
+    }
+    toPrint3 = String(toPrint3.characters.dropLast(2))
+    print("The following movies cost less than $15:" + toPrint3)
     
     
     /*
@@ -127,9 +143,14 @@ internal func exerciseThree() {
      each movie released in 2016. Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies were released in 2016:")
-    
-    
+    var toPrint4 = " "
+    for movie in allMovies {
+        if movie.releaseDate.containsString("2016") {
+            toPrint4 += (movie.name + ", ")
+        }
+    }
+    toPrint3 = String(toPrint3.characters.dropLast(2))
+    print("The following movies were released in 2016:" + toPrint4)
     
     
 }
